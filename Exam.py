@@ -1,4 +1,4 @@
-0import pygame
+import pygame
 
 class Ship:  
   def __init__(self, vector = Vector()): 
