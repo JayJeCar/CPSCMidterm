@@ -38,24 +38,31 @@ class Ship:
 
 class Vector:
 
-    def __init__(self): pass
+    def __init__(self, x=0.0, y=0.0):
+        self.x = x
+        self.y = y
 
     def __repr__(self): pass
-        #return “Vector({}, {})”.format(self.x, self.y)
 
-    def __add__(self, other): pass
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
 
-    def __sub__(self, other): pass
+    def __sub__(self, other):
+        return self.__add__(-1 * other)
 
-    def __rmul__(self, k: float): pass
+    def __rmul__(self, k: float): 
+        return Vector(k * self.x, k * self.y)
 
     def __mul__(self, k: float): pass
 
     def __truediv__(self, k: float): pass
 
-    def __neg__(self): pass
+    def __neg__(self): 
+        self.x *= -1
+        self.y *= -1
 
-    def __eq__(self): pass
+    def __eq__(self): 
+        return self.x == other.x and self.y == other.y
 
 
 @staticmethod
@@ -66,17 +73,17 @@ def test():
 
     u = Vector(x=4, y=4)
 
-    print(‘v is {}’.format(v))
+    #print(‘v is {}’.format(v))
 
-    print(‘u is {}’.format(u))
+    #print(‘u is {}’.format(u))
 
-    print(‘uplusv is {}’.format(u + v))
+    #print(‘uplusv is {}’.format(u + v))
 
-    print(‘uminusv is {}.format(u – v))
+    #print(‘uminusv is {}.format(u – v))
 
-    print(‘ku is {}’.format(3 * u))
+    #print(‘ku is {}’.format(3 * u))
 
-    print(‘-u is {}’.format(-1 * u))
+    #print(‘-u is {}’.format(-1 * u))
 
 def main():
     Vector.test()
